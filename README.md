@@ -8,7 +8,8 @@ To run The SHOP COFFEE, follow these steps:
 
 1. Clone the repository:
    ```bash
-   cd The-Hideout
+   git clone https://github.com/khactao27/coffee-shop.git
+   cd coffee-shop
    ```
 
 2. Install tk module:
@@ -58,6 +59,6 @@ Here are some screenshots of The Hideout in action:
 ## Authors 🧑‍💻
 
 
-[kom-senapati](@kom-senapati)
+[NgocQuynhNhuNguyen](@ngocquynhnhu_nguyen)
 
-Feel free to reach out if you have any questions or suggestions. Enjoy your time at The Hideout! 🌟
+Feel free to reach out if you have any questions or suggestions. Enjoy your time at The Coffe house! 🌟
