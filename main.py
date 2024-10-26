@@ -3,19 +3,17 @@ from constants import Colors
 from constants import Dimensions
 from constants import Paths
 #order window
-from order import order
 # about window
 from about import about
 
-def handle_order():
-    order(window=window,ordered=ordered)
+from login import sign_in
 
 # To set the background color of a button
 button_color = Colors.GREEN
 # To set the size of a button
 btn0 = (Dimensions.BUTTON_WIDTH, Dimensions.BUTTON_HEIGHT)
 
-ordered = dict()
+
 
 #main window
 window = Tk()
@@ -51,15 +49,18 @@ b0.place(
     width=Dimensions.ABT_WIDTH)
 
 img1 = PhotoImage(file=Paths.IMAGE_DIRECTORY+"img1.png")
-b1 = Button(
+def openLoginWindow():
+    sign_in(window=window)
+
+b2 = Button(
     image=img1,
     borderwidth=0,
     highlightthickness=0,
-    command=handle_order,
+    command=openLoginWindow,
     relief="flat")
 
-b1.place(
-    x=603, y=322,
+b2.place(
+    x=603, y=422,
     height=Dimensions.ORD_HEIGHT,
     width=Dimensions.ORD_WIDTH)
 
