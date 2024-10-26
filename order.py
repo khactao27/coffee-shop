@@ -4,6 +4,7 @@ from constants import Dimensions
 from constants import Paths
 #confirm window
 from confirm_window import confirm
+from tkinter import messagebox
 
 def order(window,ordered):
     
@@ -19,31 +20,35 @@ def order(window,ordered):
                 'Coffee with ice cream': [entry0, 275]}
         total = 0
         for item, l in menu.items():
-            if l[0].get() != "":
+            if l[0].get().isnumeric():
                 total += int(l[0].get()) * l[1]
                 ordered.update({item: l[0].get()})
+            elif l[0].get() == "":
+                continue
+            else:
+                messagebox.showerror("Invalid input number", "Please enter a valid number")
         ordered.update({key: 0 for key in menu if key not in ordered})
         ordered.update({"Total": total})
         labelbill = Label(order_window,
                           bg=Colors.ORDCOL,
                           fg='#F5EEE9',
-                          text="Rs" + str(total) + "/-",
+                          text="AUD" + str(total) + "/-",
                           font=("Cascadia Code", 30, "bold"))
-        ordered.update({"Total": f"Rs{str(total)}"})
+        ordered.update({"Total": f"{str(total)}"})
 
         labelbill.place(x=940, y=605)
         labelbill.after(1000, labelbill.destroy)
         order_window.after(1000, calculate)
 
     order_window = Toplevel()
-    order_window.title("Billing Page")
-    order_window.geometry("1152x700")
+    order_window.title("BILL ORDER")
+    order_window.geometry("1152x800")
     order_window.configure(bg=Colors.ORDCOL)
 
     canvas = Canvas(
         order_window,
         bg=Colors.ORDCOL,
-        height=700,
+        height=800,
         width=1152,
         bd=0,
         highlightthickness=0,
@@ -70,7 +75,7 @@ def order(window,ordered):
 
     btn = Button(order_window, text="Order", font=(
         "Cascadia Code", 14, "bold"), command=handle_confirm)
-    btn.place(x=940, y=665,height=Dimensions.BUTTON_HEIGHT,width=Dimensions.BUTTON_WIDTH)
+    btn.place(x=850, y=665,height=Dimensions.BUTTON_HEIGHT,width=Dimensions.BUTTON_WIDTH)
     background_img = PhotoImage(file=Paths.IMAGE_DIRECTORY+"order_bg.png")
     background = canvas.create_image(576.0, 523.5, image=background_img)
 

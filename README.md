@@ -1,14 +1,13 @@
 # The Hideout 🏡
 
-Welcome to The Hideout, a cozy place for people to come and hang out, chat, and enjoy delicious beverages. ☕
+Welcome to The SHOP COFFEE, a cozy place for people to come and hang out, chat, and enjoy delicious beverages. ☕
 
 ## How to Run 🚀
 
-To run The Hideout, follow these steps:
+To run The SHOP COFFEE, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/kom-senapati/The-Hideout.git
    cd The-Hideout
    ```
 
