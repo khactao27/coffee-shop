@@ -61,6 +61,9 @@ def sign_in(window):
     cancelButton = Button(sign_in_window,
                           text="Cancel",
                           command=cancel,
+                          background="#f44336",
+                          foreground="white",
+                          font=("Arial", 10),
                           relief="flat")
 
     cancelButton.place(
@@ -71,9 +74,11 @@ def sign_in(window):
     loginButton = Button(sign_in_window,
                          text="Login",
                          borderwidth= 10,
-                         bg="#d1c4e9",
-                         command=login,
-                         relief="flat")
+                         background="#4CAF50",
+                         relief="flat",
+                         foreground="white",
+                         font=("Arial", 10),
+                         command=login)
 
     loginButton.place(
         x=50, y=300,
